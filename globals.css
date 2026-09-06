@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  background-color: #FBF9F4;
+  color: #0F1222;
+}
+
+body {
+  font-family: var(--font-body), sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display), sans-serif;
+}
+
+::selection {
+  background-color: #FFDD85;
+  color: #0F1222;
+}
+
+/* keep the bottom nav from covering content */
+.pb-safe {
+  padding-bottom: calc(84px + env(safe-area-inset-bottom));
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #EFEBDF 25%, #F6F3EA 37%, #EFEBDF 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton { animation: none; }
+}
